@@ -89,6 +89,20 @@
 
         <div class="d-flex text-center flex-wrap justify-content-center align-items-center px-5 py-5">
             <div class="container">
+                <h2 class="fw-bold mb-3">Karya Jurusan</h2>
+                <div class="row g-4 justify-content-center">
+                    @include('partials.guest.cardkarya')
+
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a href="/karya" class="btn btn-white text-secondary">Lihat semua karya <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex text-center flex-wrap justify-content-center align-items-center px-5 py-5">
+            <div class="container">
                 <h2 class="fw-bold mb-3">Berita Seycis</h2>
                 <div class="row g-4 justify-content-center">
                     @include('partials.guest.cardberita')

@@ -17,6 +17,10 @@
                         class="nav-link {{ request()->is('beranda') || request()->is('/') ? 'active' : '' }}">Beranda</a>
                 </li>
                 <li class="nav-item-active me-lg-4">
+                    <a href="/karya"
+                        class="nav-link {{ request()->is('karya') || request()->is('/') ? 'active' : '' }}">Karya Jurusan</a>
+                </li>
+                <li class="nav-item-active me-lg-4">
                     <a href="/berita"
                         class="nav-link {{ request()->is('berita') || request()->is('/') ? 'active' : '' }}">Berita</a>
                 </li>

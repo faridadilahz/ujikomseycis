@@ -25,17 +25,22 @@
 
         <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-                <a href="/admin/dasbor"
+                <a href="{{ route('dasbor') }}"
                     class="nav-link mb-2 text-primary {{ request()->is('admin/dasbor*') ? 'active text-white' : '' }}"
                     aria-current="page"><i class="fa-solid fa-house me-3 width-fixed"></i>Dasbor</a>
             </li>
             <li class="nav-item">
-                <a href="/admin/berita"
+                <a href="{{ route('karya') }}"
+                    class="nav-link mb-2 text-primary {{ request()->is('admin/karya*') ? 'active text-white' : '' }}"
+                    aria-current="page"><i class="fa-solid fa-lightbulb me-3 width-fixed"></i>Kelola Karya</a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('berita') }}"
                     class="nav-link mb-2 text-primary {{ request()->is('admin/berita*') ? 'active text-white' : '' }}"
                     aria-current="page"><i class="fa-solid fa-newspaper me-3 width-fixed"></i>Kelola Berita</a>
             </li>
             <li class="nav-item">
-                <a href="/admin/galeri"
+                <a href="{{ route('galeri') }}"
                     class="nav-link mb-2 text-primary {{ request()->is('admin/galeri*') ? 'active text-white' : '' }}"
                     aria-current="page"><i class="fa-solid fa-image me-3 width-fixed"></i>Kelola Galeri</a>
             </li>
@@ -43,7 +48,7 @@
 
         <ul class="nav nav-pills flex-column mt-lg-auto pt-3 pt-lg-0 border-top border-light-subtle border-lg-0">
             <li class="nav-item mt-2">
-                <a href="/admin/profil"
+                <a href="{{ route('profil') }}"
                     class="nav-link mb-2 text-primary {{ request()->is('admin/profil*') ? 'active text-white' : '' }}"
                     aria-current="page"><i class="fa-solid fa-user me-3 width-fixed"></i>Profil</a>
             </li>

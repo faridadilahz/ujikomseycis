@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\Karyas;
 use App\Models\Beritas;
 use App\Models\Galeris;
 use App\Models\Reviews;
@@ -15,6 +16,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $totalKarya = Karyas::count();
         $totalBerita = Beritas::count();
         $totalGaleri = Galeris::count();
 
@@ -22,7 +24,7 @@ class DashboardController extends Controller
 
         $totalReviews = Reviews::count();
 
-        return view('admin.dasbor', compact('totalBerita', 'totalGaleri', 'averageRating', 'totalReviews'));
+        return view('admin.dasbor', compact('totalKarya', 'totalBerita', 'totalGaleri', 'averageRating', 'totalReviews'));
     }
 
     /**

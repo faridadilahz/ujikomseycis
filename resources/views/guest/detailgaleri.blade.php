@@ -28,6 +28,11 @@
             <img src="{{ asset('storage/' . $galeris->gambargaleri) }}" alt="" class="rounded-3 mb-3"
                 style="max-width: 850px;">
             <p class="text-secondary" style="max-width: 850px;">{{ $galeris->deskripsigaleri }}</p>
+            <div>
+                <button onclick="history.back()" class="btn btn-outline-primary px-4 py-2 rounded-3">
+                    <i class="fa-solid fa-arrow-left me-2"></i>Kembali
+                </button>
+            </div>
         </div>
         </div>
     </main>
