@@ -14,27 +14,38 @@ class BerandasController extends Controller
     {
         $beritas = Beritas::latest()->take(3)->get();
         $galeris = Galeris::latest()->take(3)->get();
-        $karyas = Karyas::latest()->take(3)->get();
+        $karyas  = Karyas::latest()->take(3)->get();
 
         return view('guest.beranda', compact('beritas', 'galeris', 'karyas'));
     }
 
-
-    public function karya()
+    public function karya(Request $request)
     {
-        $karyas = Karyas::latest()->get();
+        $karyas = Karyas::when($request->search, function ($query) use ($request) {
+            $query->where('namakarya', 'like', '%' . $request->search . '%')
+                  ->orWhere('jurusan', 'like', '%' . $request->search . '%');
+        })->latest()->get();
+
         return view('guest.karya', compact('karyas'));
     }
 
-    public function berita()
+    public function berita(Request $request)
     {
-        $beritas = Beritas::latest()->get();
+        $beritas = Beritas::when($request->search, function ($query) use ($request) {
+            $query->where('judulberita', 'like', '%' . $request->search . '%')
+                  ->orWhere('deskripsiberita', 'like', '%' . $request->search . '%');
+        })->latest()->get();
+
         return view('guest.berita', compact('beritas'));
     }
 
-    public function galeri()
+    public function galeri(Request $request)
     {
-        $galeris = Galeris::latest()->get();
+        $galeris = Galeris::when($request->search, function ($query) use ($request) {
+            $query->where('judulgaleri', 'like', '%' . $request->search . '%')
+                  ->orWhere('deskripsigaleri', 'like', '%' . $request->search . '%');
+        })->latest()->get();
+
         return view('guest.galeri', compact('galeris'));
     }
 
@@ -52,7 +63,7 @@ class BerandasController extends Controller
 
     public function showGaleri($id)
     {
-        $galeris  = Galeris::findOrFail($id);
+        $galeris = Galeris::findOrFail($id);
         return view('guest.detailgaleri', compact('galeris'));
     }
 

@@ -71,6 +71,6 @@ class ProfileController extends Controller
     $user->email = $request->email;
     $user->save();
 
-    return redirect()->route('admin.profil')->with('success', 'Profil berhasil diperbarui!');
+    return redirect()->route('profil')->with('success', 'Profil berhasil diperbarui!');
     }
 }

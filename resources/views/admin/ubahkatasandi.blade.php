@@ -15,7 +15,7 @@
         />
 
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-        <link rel="icon" type="image/png" href="../assets/img/logoseycisblue.png">
+        <link rel="icon" type="image/png" href="{{ asset('assets/img/logoseycisblue.png') }}">
     </head>
 
     <body>

@@ -27,6 +27,9 @@
             <p class="text-secondary mb-4"><i
                     class="fa-regular fa-calendar me-2"></i>{{ $karyas->created_at->locale('id')->translatedFormat('d F Y') }}
             </p>
+            <span class="badge rounded-pill bg-primary px-3 py-1 mb-4">
+                        {{ $karyas->jurusan }}
+                    </span>
             <h2 class="fw-bold mb-4">{{ $karyas->namakarya }}</h2>
             <img src="{{ asset('storage/' . $karyas->gambarkarya) }}" alt="" class="rounded-3 mb-3"
                 style="max-width: 850px;">

@@ -11,10 +11,13 @@ class GalerisController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $galeris = Galeris::latest()->get();
-        return view('admin.kelolagaleri', compact('galeris'));
+        $galeris = Galeris::when($request->search, function ($query) use ($request) {
+        $query->where('judulgaleri', 'like', '%' . $request->search . '%');
+    })->latest()->get();
+
+    return view('admin.kelolagaleri', compact('galeris'));
     }
 
     /**

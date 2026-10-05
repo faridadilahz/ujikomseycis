@@ -12,7 +12,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
 
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-        <link rel="icon" type="image/png" href="../assets/img/logoseycisblue.png">
+        <link rel="icon" type="image/png" href="{{ asset('assets/img/logoseycisblue.png') }}">
 </head>
 
 <body>

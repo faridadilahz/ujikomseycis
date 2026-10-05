@@ -8,9 +8,13 @@ use Illuminate\Support\Facades\Storage;
 
 class KaryasController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $karyas = Karyas::latest()->get();
+        $karyas = Karyas::when($request->search, function ($query) use ($request) {
+            $query->where('namakarya', 'like', '%' . $request->search . '%')
+                ->orWhere('jurusan', 'like', '%' . $request->search . '%');
+        })->latest()->get();
+
         return view('admin.kelolakarya', compact('karyas'));
     }
 
@@ -44,7 +48,7 @@ class KaryasController extends Controller
         return redirect()->route('karya')->with('success', 'Karya berhasil diposting!');
     }
 
-    public function show($id) 
+    public function show($id)
     {
         $karyas = Karyas::findOrFail($id);
         return view('admin.detailkarya', compact('karyas'));

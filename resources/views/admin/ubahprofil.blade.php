@@ -12,7 +12,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="icon" type="image/png" href="../assets/img/logoseycisblue.png">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logoseycisblue.png') }}">
 </head>
 
 <body>
@@ -59,7 +59,7 @@
 
                     <div class="d-flex flex-row">
                         <button type="submit" class="btn btn-primary fw-semibold me-2">Simpan Profil</button>
-                        <a href="{{ route('admin.profil') }}" class="btn btn-outline-primary fw-semibold">Batal</a>
+                        <a href="{{ route('profil') }}" class="btn btn-outline-primary fw-semibold">Batal</a>
                     </div>
                 </form>
             </div>

@@ -5,22 +5,20 @@
 <div
     class="d-flex flex-column shadow-none bg-white p-3 text-primary position-lg-fixed w-100 w-lg-auto vh-lg-100 overflow-y-lg-auto shadow-sm sidebar-admin">
 
-    <!-- Bar Atas: Logo & Tombol Hamburger (Mobile) / Logo Only (Desktop) -->
     <div class="d-flex justify-content-between align-items-center mb-lg-4">
-        <a href="/admin/dasbor" class="d-flex text-decoration-none px-2">
-            <img src="../assets/img/logoseycisblue.png" alt="" class="me-1"
+        <a href="{{ route('dasbor') }}" class="d-flex text-decoration-none px-2">
+            <img src="{{ asset('assets/img/logoseycisblue.png') }}" alt="Logo Seycis" class="me-1"
                 style="max-width: 36px; object-fit: cover;">
             <span class="fs-4 fw-bold text-primary">Seycis</span>
         </a>
 
-        <!-- Tombol Hamburger (Hanya tampil di HP) -->
         <button class="navbar-toggler border-0 shadow-none d-lg-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#adminNavbarMenu" aria-controls="adminNavbarMenu" aria-expanded="false">
             <i class="fa-solid fa-bars fs-3 text-primary"></i>
         </button>
     </div>
 
-    <!-- Container Menu: Di HP tersembunyi (collapse), di Desktop selalu tampil (d-lg-flex) -->
+    <!-- Container Menu di desktop muncul, di hp ilang -->
     <div class="collapse d-lg-flex flex-column flex-grow-1 mt-3 mt-lg-0" id="adminNavbarMenu">
 
         <ul class="nav nav-pills flex-column">
@@ -49,7 +47,7 @@
         <ul class="nav nav-pills flex-column mt-lg-auto pt-3 pt-lg-0 border-top border-light-subtle border-lg-0">
             <li class="nav-item mt-2">
                 <a href="{{ route('profil') }}"
-                    class="nav-link mb-2 text-primary {{ request()->is('admin/profil*') ? 'active text-white' : '' }}"
+                    class="nav-link mb-2 text-primary {{ request()->is('admin/profil*') || request()->is('admin/ubahprofil*') || request()->is('admin/kelolakatasandi*') || request()->is('admin/ubahkatasandi*') ? 'active text-white' : '' }}"
                     aria-current="page"><i class="fa-solid fa-user me-3 width-fixed"></i>Profil</a>
             </li>
 

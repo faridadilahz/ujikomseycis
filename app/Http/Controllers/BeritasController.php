@@ -11,11 +11,14 @@ class BeritasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $beritas = Beritas::latest()->get();
-        return view('admin.kelolaberita', compact('beritas'));
-    }
+    public function index(Request $request)
+{
+    $beritas = Beritas::when($request->search, function ($query) use ($request) {
+        $query->where('judulberita', 'like', '%' . $request->search . '%');
+    })->latest()->get();
+
+    return view('admin.kelolaberita', compact('beritas'));
+}
 
     /**
      * Show the form for creating a new resource.
