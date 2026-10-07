@@ -42,8 +42,7 @@ class BerandasController extends Controller
     public function galeri(Request $request)
     {
         $galeris = Galeris::when($request->search, function ($query) use ($request) {
-            $query->where('judulgaleri', 'like', '%' . $request->search . '%')
-                  ->orWhere('deskripsigaleri', 'like', '%' . $request->search . '%');
+            $query->where('judulgaleri', 'like', '%' . $request->search . '%');
         })->latest()->get();
 
         return view('guest.galeri', compact('galeris'));

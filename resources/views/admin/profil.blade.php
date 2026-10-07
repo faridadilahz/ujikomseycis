@@ -33,7 +33,7 @@
                         <div class="card border-0 rounded-3 shadow-sm h-100">
                             <div
                                 class="card-body d-flex flex-column justify-content-center align-items-center text-center p-4">
-                                <img src="../assets/img/logoSeycisblue.png" class="rounded-3 mb-3"
+                                <img src="{{ asset('assets/img/logoseycisblue.png') }}" class="rounded-3 mb-3"
                                     style="max-width: 140px;">
                                 <h4 class="card-title fw-bold mb-1">{{ $user->name ?? 'Admin Seycis' }}</h4>
                                 <p class="text-secondary mb-2">{{ $user->email ?? 'adminseycis@gmail.com' }}</p>
